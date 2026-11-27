@@ -31,7 +31,7 @@ Primality is computed from the integer value, never inferred from digit features
 
 ## Reproduction
 Install the package and run:
-`python -m beyond_decimal.experiments.mersenne --max-exponent 16 --output results/EXP-002-mersenne.csv`
+`python -m beyond_decimal.experiments.mersenne --max-exponent 16 --output research/results/EXP-002-mersenne-base-sweep.csv`
 
 The default experiment has 16 exponents and 35 bases, producing 560 rows.
 
