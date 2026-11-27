@@ -2,7 +2,11 @@ import csv
 
 import pytest
 
-from beyond_decimal.experiments.modular import coefficient_cycle, run_modular_sweep
+from beyond_decimal.experiments.modular import (
+    coefficient_cycle,
+    evaluate_residue_digits,
+    run_modular_sweep,
+)
 
 
 @pytest.mark.parametrize(
@@ -37,6 +41,26 @@ def test_modular_sweep_exports_all_pairs_and_marks_all_ties(tmp_path):
     assert all(row["is_minimal"] == "true" for row in mod_7 if row["base"] == "8")
     assert next(row for row in mod_7 if row["base"] == "8")["coefficient_count"] == "1"
     assert next(row for row in mod_7 if row["base"] == "10")["coefficient_count"] == "6"
+
+
+def test_digit_evaluator_matches_integer_remainder_across_bases():
+    for base in range(2, 13):
+        for value in range(100):
+            remaining = value
+            digits = []
+            while remaining:
+                digits.append(remaining % base)
+                remaining //= base
+            assert evaluate_residue_digits(digits, base, 7) == value % 7
+
+
+@pytest.mark.parametrize(
+    "digits,base,modulus",
+    [([1, 2], 2, 7), ([2], 2, 7), ([True], 2, 7), ([3], 3, 7)],
+)
+def test_digit_evaluator_rejects_invalid_digits(digits, base, modulus):
+    with pytest.raises(ValueError):
+        evaluate_residue_digits(digits, base, modulus)
 
 
 def test_modular_sweep_rejects_empty_inputs(tmp_path):
