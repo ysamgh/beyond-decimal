@@ -21,6 +21,10 @@ This experiment measures the coefficient sequence, not the complexity of the com
 - One row per modulus/base pair: 350 rows.
 - Arithmetic: exact integer modular arithmetic only.
 
+## Pre-registered expectation
+
+For every tested prime modulus m, the search range contains base b = m + 1. Since b ≡ 1 (mod m), its coefficient sequence is constant 1 and has coefficient count 1. The experiment is therefore a baseline/control for the implementation and scoring rule, not a search expected to discover an unknown theorem.
+
 ## Primary metric
 
 Coefficient count = μ + λ, the number of coefficients needed to state the non-repeating prefix and one complete cycle.
