@@ -29,9 +29,11 @@
 - [x] Implement a transparent base-selection baseline for modular residue rules.
 - [x] Compare fixed-base and task-aware selection on a pre-registered held-out modulus set (EXP-004).
 - [x] Independently replicate the locked selected base on a second disjoint modulus set (EXP-005).
-- [x] Define an explicit two-part code-length objective charging base, modulus, cycle metadata, and coefficient payload (EXP-006).
-- [x] Evaluate the locked EXP-004 candidate on held-out and independent replication moduli under the code-length objective.
-- [ ] Stress-test alternative reasonable coding schemes and measure search cost separately.
+- [x] Define an explicit two-part code-length objective (EXP-006).
+- [x] Evaluate the locked candidate on held-out and independent replication moduli (EXP-006).
+- [x] Stress-test four alternative metadata/payload coding combinations with training-only selection (EXP-007).
+- [ ] Measure runtime and search cost separately.
+- [ ] Expand sensitivity analysis to additional defensible code families.
 
 ## Milestone 0.5 — AI-assisted conjecturing
 - [ ] Integrate symbolic regression only after baselines exist.
