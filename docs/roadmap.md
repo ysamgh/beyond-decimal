@@ -17,10 +17,10 @@
 - [ ] Record runtime and complexity baselines.
 
 ## Milestone 0.3 — Pattern analysis
-- [ ] Define pre-registered feature families.
+- [x] Define initial pre-registered feature families for EXP-002.
 - [ ] Add sequence-level pattern metrics.
 - [ ] Add held-out validation and false-discovery controls.
-- [ ] Publish reproducible experiment notebooks and scripts.
+- [x] Publish reproducible experiment script, protocol, dataset, and results report.
 
 ## Milestone 0.4 — Representation search
 - [ ] Define a task interface for candidate representations.
