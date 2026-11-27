@@ -4,9 +4,10 @@
 - [x] Define research question and scope.
 - [x] Document value/representation distinction.
 - [x] Establish evidence and exactness policies.
-- [ ] Implement signed integer conversion for bases 2–36.
-- [ ] Implement a simple exact primality baseline.
-- [ ] Add unit tests and continuous integration.
+- [x] Implement signed integer conversion for bases 2–36.
+- [x] Implement a simple exact primality baseline.
+- [x] Add unit tests and continuous integration configuration.
+- [ ] Execute the repository test suite in GitHub Actions.
 - [ ] Add first reproducible experiment report.
 
 ## Milestone 0.2 — Baseline experiments
