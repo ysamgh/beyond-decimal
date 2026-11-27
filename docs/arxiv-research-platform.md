@@ -53,7 +53,7 @@ Not included: automated PDF mirroring, full-text extraction, citation graph craw
 
 ## API compliance
 
-The adapter uses arXiv's public Atom API. Cache metadata locally and avoid repeated identical searches. Respect the current API terms and rate limits. The service should acknowledge arXiv's interoperability statement where appropriate: “Thank you to arXiv for use of its open access interoperability.”
+The adapter uses arXiv's public Atom API. Identical searches are cached locally for 24 hours (including query, offset, and page size) to avoid unnecessary repeated requests. Respect the current API terms and rate limits. The service should acknowledge arXiv's interoperability statement where appropriate: “Thank you to arXiv for use of its open access interoperability.”
 
 ## Validation
 
