@@ -52,11 +52,12 @@ def run_mersenne_sweep(
             value = (1 << exponent) - 1
             binary = format_integer(value, 2)
             value_is_prime = is_prime(value)
+            exponent_is_prime = is_prime(exponent)
             for base in selected_bases:
                 numeral = format_integer(value, base)
                 writer.writerow({
                     "exponent": exponent,
-                    "exponent_is_prime": str(is_prime(exponent)).lower(),
+                    "exponent_is_prime": str(exponent_is_prime).lower(),
                     "value_decimal": value,
                     "base": base,
                     "numeral": numeral,
