@@ -42,6 +42,6 @@ Example API: format_integer(31, 2) returns 11111; parse_integer("11111", 2) retu
 - A visually simple digit string is necessarily a simpler mathematical description.
 - An AI-generated conjecture is new, correct, or proven.
 
-Status: Foundation v0.1 with EXP-001–EXP-004 baselines. Current milestone: validate task-aware representation selection with held-out data—not autonomous theorem discovery.
+Status: Foundation v0.1 with EXP-001–EXP-005 baselines. Current milestone: validate task-aware representation selection with held-out data—not autonomous theorem discovery.
 
 See docs/research-agenda.md, docs/research-methodology.md, and docs/roadmap.md.
