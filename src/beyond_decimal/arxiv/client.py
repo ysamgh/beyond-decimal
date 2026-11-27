@@ -54,7 +54,7 @@ def _text(node: ET.Element | None) -> str | None:
 def _safe_xml(payload: bytes) -> ET.Element:
     if len(payload) > 8_000_000:
         raise ValueError("arXiv API response exceeds the 8 MB safety limit")
-    upper = payload[:4096].upper()
+    upper = payload.upper()
     if b"<!DOCTYPE" in upper or b"<!ENTITY" in upper:
         raise ValueError("DTD/entity declarations are not accepted")
     return ET.fromstring(payload)
