@@ -19,7 +19,7 @@ The project begins with positional numeral systems and exact integer arithmetic.
 - Exact conversion of signed integers.
 - Value-level properties such as primality.
 - Digit-level feature extraction and pattern analysis.
-- Controlled experiments on known sequences, beginning with Mersenne numbers.
+- Controlled experiments on known sequences and modular-residue tasks, including Mersenne numbers and held-out base selection.
 
 ## Quick start
 Requires Python 3.11 or newer.
@@ -31,7 +31,7 @@ Example API: format_integer(31, 2) returns 11111; parse_integer("11111", 2) retu
 
 ## Repository map
 - docs/: research agenda, mathematical foundations, methodology, hypotheses, glossary, roadmap.
-- research/: literature review, questions, experiment protocols, findings.
+- research/: literature review, questions, experiment protocols, findings, and deterministic datasets.
 - src/beyond_decimal/: reusable computational library.
 - tests/: correctness and regression tests.
 - notebooks/: exploratory work; conclusions must be transferred into reproducible experiments.
@@ -42,6 +42,6 @@ Example API: format_integer(31, 2) returns 11111; parse_integer("11111", 2) retu
 - A visually simple digit string is necessarily a simpler mathematical description.
 - An AI-generated conjecture is new, correct, or proven.
 
-Status: Foundation v0.1. First milestone: a tested exact-arithmetic core and reproducible baseline experiment—not autonomous theorem discovery.
+Status: Foundation v0.1 with EXP-001–EXP-004 baselines. Current milestone: validate task-aware representation selection with held-out data—not autonomous theorem discovery.
 
 See docs/research-agenda.md, docs/research-methodology.md, and docs/roadmap.md.
