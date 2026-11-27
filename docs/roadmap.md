@@ -7,7 +7,7 @@
 - [x] Implement signed integer conversion for bases 2–36.
 - [x] Implement a simple exact primality baseline.
 - [x] Add unit tests and continuous integration configuration.
-- [ ] Execute the repository test suite in GitHub Actions.
+- [x] Execute the repository test suite in GitHub Actions (Python 3.11, 3.12, and 3.13).
 - [ ] Add first reproducible experiment report.
 
 ## Milestone 0.2 — Baseline experiments
