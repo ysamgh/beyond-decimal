@@ -20,7 +20,7 @@ The experiment demonstrates a clear distinction between a value-level property (
 The count 159/560 is descriptive only. It must not be interpreted as evidence that a particular base is intrinsically superior. The search covered many base/exponent combinations, and no task-specific objective or null model was used to establish significance.
 
 ## Reproduction
-`python -m beyond_decimal.experiments.mersenne --max-exponent 16 --output results/EXP-002-mersenne.csv`
+`python -m beyond_decimal.experiments.mersenne --max-exponent 16 --output research/results/EXP-002-mersenne-base-sweep.csv`
 
 ## Limitations
 - The exponent range is intentionally small.
