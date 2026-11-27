@@ -21,12 +21,13 @@
 - [ ] Add sequence-level pattern metrics.
 - [ ] Add held-out validation and false-discovery controls.
 - [x] Publish reproducible experiment script, protocol, dataset, and results report.
+- [x] Add modular residue coefficient-cycle analysis with a declared search space.
 
 ## Milestone 0.4 — Representation search
-- [ ] Define a task interface for candidate representations.
-- [ ] Implement a transparent base-selection baseline.
-- [ ] Compare fixed-base and task-aware selection.
-- [ ] Evaluate description length and search cost.
+- [x] Define a task-specific representation objective.
+- [x] Implement a transparent base-selection baseline for modular residue rules.
+- [ ] Compare fixed-base and task-aware selection on held-out tasks.
+- [ ] Evaluate full description length and search cost.
 
 ## Milestone 0.5 — AI-assisted conjecturing
 - [ ] Integrate symbolic regression only after baselines exist.
