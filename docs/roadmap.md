@@ -28,6 +28,7 @@
 - [x] Define a task-specific representation objective.
 - [x] Implement a transparent base-selection baseline for modular residue rules.
 - [x] Compare fixed-base and task-aware selection on a pre-registered held-out modulus set (EXP-004).
+- [x] Independently replicate the locked selected base on a second disjoint modulus set (EXP-005).
 - [ ] Evaluate full description length and search cost.
 
 ## Milestone 0.5 — AI-assisted conjecturing
