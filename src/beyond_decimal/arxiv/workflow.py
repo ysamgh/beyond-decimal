@@ -45,7 +45,7 @@ def prepare_release(root: str | Path, *, author_name: str, category: str, licens
         checks.append({"check": f"file:{relative}", "ok": candidate.is_relative_to(root) and candidate.is_file()})
     checks.extend([
         {"check": "author_name_confirmed", "ok": bool(author_name.strip()) and len(author_name) <= 200},
-        {"check": "category_present", "ok": bool(re.fullmatch(r"[a-z-]+\\.[A-Z]{2}", category))},
+        {"check": "category_present", "ok": bool(re.fullmatch(r"[a-z-]+\.[A-Z]{2}", category))},
         {"check": "license_present", "ok": license_id in {"arxiv", "CC BY 4.0", "CC BY-SA 4.0", "CC BY-NC-SA 4.0", "CC BY-NC-ND 4.0", "CC0 1.0"}},
         {"check": "human_submission_required", "ok": True},
     ])
