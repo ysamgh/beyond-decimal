@@ -12,6 +12,12 @@ from .mdl import (
     run_mdl_search,
     select_mdl_base,
 )
+from .mdl_sensitivity import (
+    SCHEMES,
+    delta_code_length,
+    run_sensitivity,
+    select_base as select_sensitivity_base,
+)
 
 __all__ = [
     "run_base_sweep",
@@ -28,4 +34,8 @@ __all__ = [
     "run_mdl_replication",
     "run_mdl_search",
     "select_mdl_base",
+    "SCHEMES",
+    "delta_code_length",
+    "run_sensitivity",
+    "select_sensitivity_base",
 ]
