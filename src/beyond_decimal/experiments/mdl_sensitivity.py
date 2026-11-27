@@ -156,6 +156,8 @@ def run_replication(output_path: str | Path) -> int:
             for base in evaluated:
                 item = describe_rule(base, modulus, scheme)
                 role = (
+                    "training_selected+locked_base9"
+                    if base == selected == LOCKED_BASE else
                     "training_selected" if base == selected else
                     "locked_base9" if base == LOCKED_BASE else
                     "fixed_baseline"
