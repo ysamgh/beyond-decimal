@@ -34,6 +34,29 @@ def coefficient_cycle(base: int, modulus: int) -> tuple[int, int, tuple[int, ...
     return preperiod, period, tuple(coefficients)
 
 
+def evaluate_residue_digits(
+    digits: Iterable[int], base: int, modulus: int
+) -> int:
+    """Evaluate little-endian base digits modulo modulus using the cycle."""
+    if isinstance(base, bool) or not isinstance(base, int) or base < 2:
+        raise ValueError("base must be an integer >= 2")
+    if isinstance(modulus, bool) or not isinstance(modulus, int) or modulus < 2:
+        raise ValueError("modulus must be an integer >= 2")
+    selected_digits = tuple(digits)
+    for digit in selected_digits:
+        if isinstance(digit, bool) or not isinstance(digit, int) or not 0 <= digit < base:
+            raise ValueError("each digit must be an integer in [0, base)")
+    preperiod, period, coefficients = coefficient_cycle(base, modulus)
+    total = 0
+    for index, digit in enumerate(selected_digits):
+        coefficient_index = (
+            index if index < preperiod
+            else preperiod + (index - preperiod) % period
+        )
+        total = (total + digit * coefficients[coefficient_index]) % modulus
+    return total
+
+
 def run_modular_sweep(
     output_path: str | Path,
     moduli: Iterable[int] = DEFAULT_MODULI,
