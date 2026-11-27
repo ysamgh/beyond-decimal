@@ -8,12 +8,12 @@
 - [x] Implement a simple exact primality baseline.
 - [x] Add unit tests and continuous integration configuration.
 - [x] Execute the repository test suite in GitHub Actions (Python 3.11, 3.12, and 3.13).
-- [ ] Add first reproducible experiment report.
+- [x] Add first reproducible experiment report (EXP-001 protocol and executable EXP-002 study).
 
 ## Milestone 0.2 — Baseline experiments
-- [ ] Generate Mersenne values and representations across bases.
-- [ ] Separate digit features from value-level properties.
-- [ ] Produce machine-readable CSV/JSON results.
+- [x] Generate Mersenne values and representations across bases 2–36.
+- [x] Separate digit features from value-level properties.
+- [x] Add deterministic CSV export for Mersenne sweeps.
 - [ ] Record runtime and complexity baselines.
 
 ## Milestone 0.3 — Pattern analysis
