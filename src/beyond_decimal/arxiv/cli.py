@@ -34,9 +34,13 @@ def main() -> None:
     store = ResearchStore()
     client = ArxivClient()
     if args.command == "search":
-        papers = client.search(args.query, max_results=args.limit)
-        store.save_search(args.query, papers)
-        print(json.dumps([p.to_dict() for p in papers], ensure_ascii=False, indent=2))
+        cached = store.get_cached_search(args.query, max_results=args.limit)
+        if cached is not None:
+            print(json.dumps({"cached": True, "papers": cached}, ensure_ascii=False, indent=2))
+        else:
+            papers = client.search(args.query, max_results=args.limit)
+            store.save_search(args.query, papers, max_results=args.limit)
+            print(json.dumps({"cached": False, "papers": [p.to_dict() for p in papers]}, ensure_ascii=False, indent=2))
     elif args.command == "get":
         paper = client.get_paper(args.arxiv_id)
         store.save_paper(paper)
