@@ -19,9 +19,12 @@ store = ResearchStore(os.environ.get("BEYOND_DECIMAL_DB", "data/arxiv/research.s
 @mcp.tool()
 def search_papers(query: str, max_results: int = 20, start: int = 0) -> str:
     """Search arXiv's official Atom API and save descriptive metadata locally."""
+    cached = store.get_cached_search(query, max_results=max_results, start=start)
+    if cached is not None:
+        return json.dumps({"cached": True, "papers": cached}, ensure_ascii=False, indent=2)
     papers = client.search(query, max_results=max_results, start=start)
-    store.save_search(query, papers)
-    return json.dumps([p.to_dict() for p in papers], ensure_ascii=False, indent=2)
+    store.save_search(query, papers, max_results=max_results, start=start)
+    return json.dumps({"cached": False, "papers": [p.to_dict() for p in papers]}, ensure_ascii=False, indent=2)
 
 
 @mcp.tool()
