@@ -15,6 +15,7 @@
 - [x] Separate digit features from value-level properties.
 - [x] Add deterministic CSV export for Mersenne sweeps.
 - [ ] Record runtime and complexity baselines.
+- [x] Add cross-modulus held-out base-selection experiment (EXP-004).
 
 ## Milestone 0.3 — Pattern analysis
 - [x] Define initial pre-registered feature families for EXP-002.
@@ -26,7 +27,7 @@
 ## Milestone 0.4 — Representation search
 - [x] Define a task-specific representation objective.
 - [x] Implement a transparent base-selection baseline for modular residue rules.
-- [ ] Compare fixed-base and task-aware selection on held-out tasks.
+- [x] Compare fixed-base and task-aware selection on a pre-registered held-out modulus set (EXP-004).
 - [ ] Evaluate full description length and search cost.
 
 ## Milestone 0.5 — AI-assisted conjecturing
