@@ -43,8 +43,11 @@ class ResearchStoreTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             store = ResearchStore(Path(temp) / "research.sqlite3")
             paper = _paper_from_entry(_safe_xml(ATOM_SAMPLE).find(ATOM + "entry"))
-            store.save_search("all:test", [paper])
+            store.save_search("all:test", [paper], max_results=10)
             self.assertEqual(store.get_paper(paper.arxiv_id)["title"], "Test Paper")
+            cached = store.get_cached_search("all:test", max_results=10)
+            self.assertEqual(cached[0]["arxiv_id"], paper.arxiv_id)
+            self.assertIsNone(store.get_cached_search("all:test", max_results=11))
             store.add_note(paper.arxiv_id, "Relevant to coding schemes.")
             self.assertEqual(len(store.list_notes(paper.arxiv_id)), 1)
 
