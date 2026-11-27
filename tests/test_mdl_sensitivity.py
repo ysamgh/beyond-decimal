@@ -67,7 +67,7 @@ def test_replication_contains_locked_base_nine(tmp_path):
     for scheme in SCHEMES:
         locked = [
             row for row in rows
-            if row["scheme"] == scheme and row["role"] == "locked_base9"
+            if row["scheme"] == scheme and "locked_base9" in row["role"]
         ]
         assert len(locked) == 16
         assert {row["base"] for row in locked} == {"9"}
