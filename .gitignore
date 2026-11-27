@@ -221,3 +221,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local research metadata and generated release preflight artifacts
+data/arxiv/
+research/paper/release-preflight.json
